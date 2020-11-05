@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev Games</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        /*TODOS OS LINK SERÃO SEM DECORAÇÃO E DA COR BRANCA*/
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        /*O CORPOR SERÁ DE FUNDO PRETO E AS LETRAS DA COR BRANCA COM A SEGUINTE FONT*/
+        body {
+            background-color: rgb(3, 10, 2);
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color: honeydew;
+
+        }
+
+        /*SCROLLBAR PERSONALIZADO*/
+        ::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px rgb(78, 72, 72);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgb(255, 255, 255);
+            border-radius: 0px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #db5959;
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        /*DEFINIÇÃO DE LISTA DO MENU*/
+        ul li {
+            list-style: none;
+            line-height: 40px;
+            display: inline;
+            margin: 15px;
+
+        }
+
+        /*DEFINIÇÃO DOS LINKS DA LISTA DO MENU*/
+        ul a li {
+            text-decoration: none;
+            color: white
+        }
+
+        /*DEFINIÇÃO DOS LINKS DO MENU QUANDO O MOUSE PASSAR POR CIMA*/
+        ul a li:hover {
+            color: tomato;
+
+        }
+
+       
+
+        /*DEFINIÇÃO DA POSIÇÃO DO MENU INTEIRO*/
+
+        #menu {
+            position: absolute;
+            left: 800px;
+
+        }
+
+        /*DESAPARECIMENTO DOS TRAÇOS NA RESOLUÇÃO NÃO DEFINIDA NA MEDIA QUERY*/
+
+        #traço {
+            display: none;
+
+        }
+        hr{
+ border-color: white; 
+}
+        /*botão DARK MODE*/
+        #bgbutton {
+            background-color: transparent;
+            border-radius: 5px;
+            font-size: 20px;
+        }
+
+        /*MEDIA QUERY COM AS DEVIDAS DEFINIÇÕES PARA RESOLUÇÃO ESCOLHIDA*/
+        @media all and (min-width: 0px) and (max-width: 1324px) {
+
+            /*DEFINIÇÃO DE LISTA DO MENU*/
+            ul li {
+                display: block;
+
+            }
+
+            /*DEFINIÇÃO DE TODOS OS LINKS*/
+            a {
+                text-decoration: none;
+                color: white;
+            }
+
+            /*DEFINIÇÃO DOS LINKS DO MENU QUANDO O MOUSE PASSAR POR CIMA*/
+            ul li:hover {
+                background-color: rgb(94, 94, 94);
+
+            }
+
+            /*DEFINIÇÃO DO MENU INTEIRO*/
+            #menu {
+                background-color: rgb(9, 22, 11);
+                display: none;
+                position: fixed;
+                left: 30%;
+                top: 100px;
+                width: 65%;
+                height: 320px;
+
+
+
+            }
+
+            /*APARECIMENTO E DEFINIÇÃO DOS TRAÇOS DO MENU HAMBURGUER NA RESOLUÇÃO DEFINIDA NA MEDIA QUERY*/
+            #traço {
+                position: fixed;
+                display: block;
+                width: 40px;
+                height: 400px;
+                line-height: 10px;
+                left: 67%;
+                top: 0px;
+                padding: 0px;
+                margin: 0px;
+                
+                
+            }
+
+
+        }
+
+        /*--FIM--MEDIA QUERY COM AS DEVIDAS DEFINIÇÕES PARA RESOLUÇÃO ESCOLHIDA*/
+    </style>
+</head>
+
+<!--inicio do corpo-->
+
+<body id='bgz'>
+
+    <!-- traços do menu -->
+    <div id="traço">
+        <img src="img/rato1.png" alt="" >
+    </div>
+    <!-- fim traços do menu -->
+
+    <!-- menu -->
+    <div id="menu">
+        <ul>
+            <a onclick="document.getElementById('text').innerHTML=('Aprenda');" href="#inicio">
+                <li id='text'>Comece</li>
+            </a>
+            <a onclick="document.getElementById('text1').innerHTML=('Noção de jogo');document.getElementById('text1').style.display=('inline-block');"
+                href="#eaidev">
+                <li id='text1'>Sobre as rotas</li>
+            </a>
+            <a onclick="document.getElementById('text2').innerHTML=('Visão de jogo');" href="#desenvolvimento">
+                <li id='text2'>Sobre o minimapa e wards</li>
+            </a>
+            <a onclick="document.getElementById('text3').innerHTML=('Definição das comps');" href="#arte">
+                <li id='text3'>Composições</li>
+            </a>
+
+        </ul>
+    </div>
+    <!--fim do menu -->
+
+    <!-- botao darkmode -->
+    <img id='bgbutton' src="img/rato.png" alt="" srcset="">
+    <br>
+    <!-- fim botao darkmode -->
+
+</body>
+<!--fim do corpo-->
+
+<!--início do script em javascript-->
+<script>
+    /* DEFINIÇÃO DE VARIÁVEIS*/
+    var menufechar = document.getElementById('traço')
+    var pegarmenu = document.getElementById('menu')
+    var bgbotao = document.getElementById('bgbutton')
+    var bg = document.getElementById('bgz')
+    
+    bgbotao.addEventListener('click', darkmode)
+    menufechar.addEventListener('click', mouseclicar)
+
+    /*FUNÇÃO DE CLICAR*/
+    function mouseclicar() {
+        if (pegarmenu.style.display == 'block') {
+            pegarmenu.style.display = 'none';
+        } else {
+            pegarmenu.style.display = 'block';
+        }
+    }
+    /* FUNÇÂO DE FICAR CLARO E VOLTAR A SER ESCURO*/
+    function darkmode() {
+        if (bg.style.backgroundColor == 'white') {
+            bg.style.backgroundColor = ' rgb(3, 10, 2)';
+            pegarmenu.style.backgroundColor = ' rgb(7, 17, 9)';
+            document.getElementsByTagName('li')[0].style.color = 'white';
+            document.getElementsByTagName('li')[1].style.color = 'white';
+            document.getElementsByTagName('li')[2].style.color = 'white';
+            document.getElementsByTagName('li')[3].style.color = 'white';
+            document.getElementsByTagName('hr')[0].style.borderColor='white';
+           document.getElementsByTagName('hr')[1].style.borderColor='white';
+           document.getElementsByTagName('hr')[2].style.borderColor='white';
+
+          
+
+        } else {
+            bg.style.backgroundColor = 'white';
+            menufechar.style.color = 'black';
+            pegarmenu.style.backgroundColor = '#d0eee8';
+            document.getElementsByTagName('li')[0].style.color = 'black';
+            document.getElementsByTagName('li')[1].style.color = 'black';
+            document.getElementsByTagName('li')[2].style.color = 'black';
+            document.getElementsByTagName('li')[3].style.color = 'black';
+            document.getElementsByTagName('hr')[0].style.borderColor='black';
+           document.getElementsByTagName('hr')[1].style.borderColor='black';
+           document.getElementsByTagName('hr')[2].style.borderColor='black';
+        }
+    }
+
+</script>
+<!--fim do script em javascript-->
+
+</html>
