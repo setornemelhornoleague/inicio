@@ -71,7 +71,7 @@
 
         #menu {
             position: absolute;
-            left: 800px;
+            left: 600px;
 
         }
 
@@ -89,7 +89,7 @@
         #bgbutton1 {
             position: absolute;
             display: block;
-            left:30px;
+            left: 30px;
         }
 
         #bgbutton {
@@ -161,7 +161,7 @@
 
     <!-- traços do menu -->
     <div id="traço">
-        <img src="img/rato1.png" alt="">
+        <img src="img/rato2.png" alt="">
     </div>
     <!-- fim traços do menu -->
 
@@ -186,12 +186,16 @@
     </div>
     <!--fim do menu -->
 
-    <!-- botao darkmode -->
-    <img onclick="document.getElementById('bgbutton').style.display='none';document.getElementById('bgbutton1').style.display='block'; "id='bgbutton' src="img/noc.png" alt="">
+    <!-- botao darkmode/lightmode -->
+    <img id='bgbutton' src="img/noc.png"
+        onclick="document.getElementById('bgbutton').style.display='none';document.getElementById('bgbutton1').style.display='block';"
+        alt="Imagem de um personagem de lol chamado nocturne, que funciona como botao de modo escuro do site">
     <!-- botao lightmode -->
-    <img onclick="document.getElementById('bgbutton1').style.display='none';document.getElementById('bgbutton').style.display='block';"id='bgbutton1' src="img/lux.png" alt="">
+    <img id='bgbutton1' src="img/lux1.png"
+        onclick="document.getElementById('bgbutton1').style.display='none';document.getElementById('bgbutton').style.display='block';"
+        alt="Imagem de um personagem de lol chamado lux, que funciona como botao de modo claro do site">
 
-    <!-- fim botao darkmode -->
+    <!-- fim botao darkmode/lightmode -->
 
 </body>
 <!--fim do corpo-->
@@ -241,7 +245,7 @@
             document.getElementsByTagName('hr')[0].style.borderColor = 'black';
             document.getElementsByTagName('hr')[1].style.borderColor = 'black';
             document.getElementsByTagName('hr')[2].style.borderColor = 'black';
-            
+
         }
     }
 
