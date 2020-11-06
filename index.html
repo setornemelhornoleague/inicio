@@ -65,7 +65,7 @@
 
         }
 
-       
+
 
         /*DEFINIÇÃO DA POSIÇÃO DO MENU INTEIRO*/
 
@@ -81,15 +81,22 @@
             display: none;
 
         }
-        hr{
- border-color: white; 
-}
-        /*botão DARK MODE*/
-        #bgbutton {
-            background-color: transparent;
-            border-radius: 5px;
-            font-size: 20px;
+
+        hr {
+            border-color: white;
         }
+
+        #bgbutton1 {
+            position: absolute;
+            display: block;
+            left:30px;
+        }
+
+        #bgbutton {
+            position: fixed;
+            display: none;
+        }
+
 
         /*MEDIA QUERY COM AS DEVIDAS DEFINIÇÕES PARA RESOLUÇÃO ESCOLHIDA*/
         @media all and (min-width: 0px) and (max-width: 1324px) {
@@ -137,8 +144,8 @@
                 top: 0px;
                 padding: 0px;
                 margin: 0px;
-                
-                
+
+
             }
 
 
@@ -154,7 +161,7 @@
 
     <!-- traços do menu -->
     <div id="traço">
-        <img src="img/rato1.png" alt="" >
+        <img src="img/rato1.png" alt="">
     </div>
     <!-- fim traços do menu -->
 
@@ -180,8 +187,10 @@
     <!--fim do menu -->
 
     <!-- botao darkmode -->
-    <img id='bgbutton' src="img/rato.png" alt="" srcset="">
-    <br>
+    <img onclick="document.getElementById('bgbutton').style.display='none';document.getElementById('bgbutton1').style.display='block'; "id='bgbutton' src="img/noc.png" alt="">
+    <!-- botao lightmode -->
+    <img onclick="document.getElementById('bgbutton1').style.display='none';document.getElementById('bgbutton').style.display='block';"id='bgbutton1' src="img/lux.png" alt="">
+
     <!-- fim botao darkmode -->
 
 </body>
@@ -193,11 +202,11 @@
     var menufechar = document.getElementById('traço')
     var pegarmenu = document.getElementById('menu')
     var bgbotao = document.getElementById('bgbutton')
+    var bgbotao1 = document.getElementById('bgbutton1')
     var bg = document.getElementById('bgz')
-    
     bgbotao.addEventListener('click', darkmode)
     menufechar.addEventListener('click', mouseclicar)
-
+    bgbotao1.addEventListener('click', darkmode)
     /*FUNÇÃO DE CLICAR*/
     function mouseclicar() {
         if (pegarmenu.style.display == 'block') {
@@ -215,11 +224,11 @@
             document.getElementsByTagName('li')[1].style.color = 'white';
             document.getElementsByTagName('li')[2].style.color = 'white';
             document.getElementsByTagName('li')[3].style.color = 'white';
-            document.getElementsByTagName('hr')[0].style.borderColor='white';
-           document.getElementsByTagName('hr')[1].style.borderColor='white';
-           document.getElementsByTagName('hr')[2].style.borderColor='white';
+            document.getElementsByTagName('hr')[0].style.borderColor = 'white';
+            document.getElementsByTagName('hr')[1].style.borderColor = 'white';
+            document.getElementsByTagName('hr')[2].style.borderColor = 'white';
 
-          
+
 
         } else {
             bg.style.backgroundColor = 'white';
@@ -229,9 +238,10 @@
             document.getElementsByTagName('li')[1].style.color = 'black';
             document.getElementsByTagName('li')[2].style.color = 'black';
             document.getElementsByTagName('li')[3].style.color = 'black';
-            document.getElementsByTagName('hr')[0].style.borderColor='black';
-           document.getElementsByTagName('hr')[1].style.borderColor='black';
-           document.getElementsByTagName('hr')[2].style.borderColor='black';
+            document.getElementsByTagName('hr')[0].style.borderColor = 'black';
+            document.getElementsByTagName('hr')[1].style.borderColor = 'black';
+            document.getElementsByTagName('hr')[2].style.borderColor = 'black';
+            
         }
     }
 
