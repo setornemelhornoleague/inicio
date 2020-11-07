@@ -22,7 +22,7 @@
             overflow-x: hidden;
             background-color: rgb(3, 10, 2);
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-            color: honeydew;
+            color: whitesmoke;
 
         }
 
@@ -152,6 +152,13 @@
 
         }
 
+        #rota {
+            display: none;
+            position: relative;
+            left: 30px;
+            top: 150px;
+        }
+
         /*--FIM--MEDIA QUERY COM AS DEVIDAS DEFINIÇÕES PARA RESOLUÇÃO ESCOLHIDA*/
     </style>
 </head>
@@ -162,7 +169,7 @@
 
     <!-- traços do menu -->
     <div id="traço">
-        <img src="img/rato3.png" alt="">
+        <img onclick="document.getElementById('ratodub').play()"; src="img/rato3.png" alt="">
     </div>
     <!-- fim traços do menu -->
 
@@ -172,8 +179,8 @@
             <a onclick="document.getElementById('text').innerHTML=('Aprenda');" href="#inicio">
                 <li id='text'>Comece</li>
             </a>
-            <a onclick="document.getElementById('text1').innerHTML=('Noção de jogo');document.getElementById('text1').style.display=('inline-block');"
-                href="#eaidev">
+            <a onclick="document.getElementById('text1').innerHTML=('Noção de jogo');document.getElementById('text1').style.display=('inline-block');document.getElementById('rota').style.display='block'"
+                ; href="#eaidev">
                 <li id='text1'>Sobre as rotas</li>
             </a>
             <a onclick="document.getElementById('text2').innerHTML=('Visão de jogo');" href="#desenvolvimento">
@@ -189,16 +196,18 @@
 
     <!-- botao darkmode/lightmode -->
     <img id='bgbutton' src="img/noc.png"
-        onclick="document.getElementById('bgbutton').style.display='none';document.getElementById('bgbutton1').style.display='block';"
-        alt="Imagem de um personagem de lol chamado nocturne, que funciona como botao de modo escuro do site">
+        onclick="document.getElementById('bgbutton').style.display='none';document.getElementById('bgbutton1').style.display='block';document.getElementById('bgz').style.color='whitesmoke'"
+        alt="Imagem de um personagem de lol chamado nocturne, que funciona como botao do modo escuro do site">
     <!-- botao lightmode -->
     <img id='bgbutton1' src="img/lux1.png"
-        onclick="document.getElementById('bgbutton1').style.display='none';document.getElementById('bgbutton').style.display='block';"
-        alt="Imagem de um personagem de lol chamado lux, que funciona como botao de modo claro do site">
+        onclick="document.getElementById('bgbutton1').style.display='none';document.getElementById('bgbutton').style.display='block';document.getElementById('bgz').style.color='black'"
+        alt="Imagem de um personagem de lol chamado lux, que funciona como botao do modo claro do site">
 
     <!-- fim botao darkmode/lightmode -->
-<br>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><b><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></b> oi
+    <!-- inicio do conteúdo#1 -->
+    <p id='rota'>Rotas</p>
+    <!-- fim do conteúdo#1 -->
+<audio src="img/ratodub.mp4" id='ratodub'></audio>
 </body>
 <!--fim do corpo-->
 
