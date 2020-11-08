@@ -83,13 +83,10 @@
 
         }
 
-        hr {
-            border-color: rgb(3, 66, 1);
-            height:4px;
-            width:40px;
-            background-color: rgb(0, 70, 17);
-            border-radius: 2px;
-        }
+        #traçado {
+                display: none;
+               
+ }
 
         #bgbutton1 {
             position: absolute;
@@ -101,8 +98,7 @@
             position: absolute;
             display: none;
         }
-
-
+      
         /*MEDIA QUERY COM AS DEVIDAS DEFINIÇÕES PARA RESOLUÇÃO ESCOLHIDA*/
         @media all and (min-width: 0px) and (max-width: 1324px) {
 
@@ -143,15 +139,24 @@
                 position: fixed;
                 display: block;
                 width: 40px;
-                height: 400px;
+                height: 500px;
                 line-height: 10px;
-                left: 65%;
+                left: 75%;
+                top: 47px;
+                padding: 0px;
+                margin: 0px;
+ }
+ #traçado {
+                position: fixed;
+                display: block;
+                width: 40px;
+                height: 500px;
+                line-height: 10px;
+                left: 75%;
                 top: 13px;
                 padding: 0px;
                 margin: 0px;
-
-
-            }
+ }
 
 
         }
@@ -170,13 +175,15 @@
 <!--inicio do corpo-->
 
 <body id='bgz'>
-
-    <!-- traços do menu -->
+<!--traços menu hamburguer-->
+<div id="traçado"onclick="document.getElementById('ratodub').play()";  id="traçado">
+<br>
+        <hr><br>
+        <hr><br>
+        <hr></div>
+    <!-- botão para abrir o menu -->
     <div onclick="document.getElementById('ratodub').play()";  id="traço">
-        <br>
-        <hr><br>
-        <hr><br>
-        <hr>
+        
         <img src="img/rato4.png" alt="">
     </div>
     <!-- fim traços do menu -->
@@ -210,6 +217,7 @@
     <img id='bgbutton1' src="img/lux1.png"
         onclick="document.getElementById('bgbutton1').style.display='none';document.getElementById('bgbutton').style.display='block';document.getElementById('bgz').style.color='black';mudarcor()"
         alt="Imagem de um personagem de lol chamado lux, que funciona como botao do modo claro do site">
+       
 
     <!-- fim botao darkmode/lightmode -->
     <!-- inicio do conteúdo#1 -->
@@ -223,6 +231,7 @@
 <script>
 
     /* DEFINIÇÃO DE VARIÁVEIS*/
+    var menuabrir = document.getElementById('traçado')
     var menufechar = document.getElementById('traço')
     var pegarmenu = document.getElementById('menu')
     var bgbotao = document.getElementById('bgbutton')
@@ -232,7 +241,7 @@
     bgbotao.addEventListener('click', darkmode)
     menufechar.addEventListener('click', mouseclicar)
     bgbotao1.addEventListener('click', darkmode)
-
+menuabrir.addEventListener('click', mouseclicar)
     /*FUNÇÃO DE CLICAR*/
     function mouseclicar() {
         if (pegarmenu.style.display == 'block') {
