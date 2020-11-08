@@ -84,7 +84,11 @@
         }
 
         hr {
-            border-color: white;
+            border-color: rgb(3, 66, 1);
+            height:4px;
+            width:40px;
+            background-color: rgb(0, 70, 17);
+            border-radius: 2px;
         }
 
         #bgbutton1 {
@@ -168,8 +172,12 @@
 <body id='bgz'>
 
     <!-- traços do menu -->
-    <div id="traço">
-        <img onclick="document.getElementById('ratodub').play()"; src="img/rato3.png" alt="">
+    <div onclick="document.getElementById('ratodub').play()";  id="traço">
+        <br>
+        <hr><br>
+        <hr><br>
+        <hr>
+        <img src="img/rato4.png" alt="">
     </div>
     <!-- fim traços do menu -->
 
@@ -200,28 +208,31 @@
         alt="Imagem de um personagem de lol chamado nocturne, que funciona como botao do modo escuro do site">
     <!-- botao lightmode -->
     <img id='bgbutton1' src="img/lux1.png"
-        onclick="document.getElementById('bgbutton1').style.display='none';document.getElementById('bgbutton').style.display='block';document.getElementById('bgz').style.color='black'"
+        onclick="document.getElementById('bgbutton1').style.display='none';document.getElementById('bgbutton').style.display='block';document.getElementById('bgz').style.color='black';mudarcor()"
         alt="Imagem de um personagem de lol chamado lux, que funciona como botao do modo claro do site">
 
     <!-- fim botao darkmode/lightmode -->
     <!-- inicio do conteúdo#1 -->
     <p id='rota'>Rotas</p>
     <!-- fim do conteúdo#1 -->
-<audio src="img/ratodub.mp4" id='ratodub'></audio>
+    <audio src="img/ratodub.mp4" id='ratodub'></audio>
 </body>
 <!--fim do corpo-->
 
 <!--início do script em javascript-->
 <script>
+
     /* DEFINIÇÃO DE VARIÁVEIS*/
     var menufechar = document.getElementById('traço')
     var pegarmenu = document.getElementById('menu')
     var bgbotao = document.getElementById('bgbutton')
     var bgbotao1 = document.getElementById('bgbutton1')
     var bg = document.getElementById('bgz')
+    var list = document.querySelectorAll("li");
     bgbotao.addEventListener('click', darkmode)
     menufechar.addEventListener('click', mouseclicar)
     bgbotao1.addEventListener('click', darkmode)
+
     /*FUNÇÃO DE CLICAR*/
     function mouseclicar() {
         if (pegarmenu.style.display == 'block') {
@@ -230,34 +241,29 @@
             pegarmenu.style.display = 'block';
         }
     }
+
     /* FUNÇÂO DE FICAR CLARO E VOLTAR A SER ESCURO*/
     function darkmode() {
         if (bg.style.backgroundColor == 'white') {
             bg.style.backgroundColor = ' rgb(3, 10, 2)';
             pegarmenu.style.backgroundColor = ' rgb(7, 17, 9)';
-            document.getElementsByTagName('li')[0].style.color = 'white';
-            document.getElementsByTagName('li')[1].style.color = 'white';
-            document.getElementsByTagName('li')[2].style.color = 'white';
-            document.getElementsByTagName('li')[3].style.color = 'white';
-            document.getElementsByTagName('hr')[0].style.borderColor = 'white';
-            document.getElementsByTagName('hr')[1].style.borderColor = 'white';
-            document.getElementsByTagName('hr')[2].style.borderColor = 'white';
-
-
-
+            list[0].style.color = 'white';
+            list[1].style.color = 'white';
+            list[2].style.color = 'white';
+            list[3].style.color = 'white';
         } else {
             bg.style.backgroundColor = 'white';
             menufechar.style.color = 'black';
             pegarmenu.style.backgroundColor = '#d0eee8';
-            document.getElementsByTagName('li')[0].style.color = 'black';
-            document.getElementsByTagName('li')[1].style.color = 'black';
-            document.getElementsByTagName('li')[2].style.color = 'black';
-            document.getElementsByTagName('li')[3].style.color = 'black';
-            document.getElementsByTagName('hr')[0].style.borderColor = 'black';
-            document.getElementsByTagName('hr')[1].style.borderColor = 'black';
-            document.getElementsByTagName('hr')[2].style.borderColor = 'black';
-
         }
+    }
+
+    function mudarcor() {
+
+        list[0].style.color = 'black';
+        list[1].style.color = 'black';
+        list[2].style.color = 'black';
+        list[3].style.color = 'black';
     }
 
 </script>
