@@ -91,12 +91,15 @@
         #bgbutton1 {
             position: absolute;
             display: block;
-            left: 30px;
+            left: 0px;
+            top:10px;
         }
 
         #bgbutton {
             position: absolute;
             display: none;
+            left:0px;
+            top:10px;
         }
       
         /*MEDIA QUERY COM AS DEVIDAS DEFINIÇÕES PARA RESOLUÇÃO ESCOLHIDA*/
@@ -122,7 +125,7 @@
 
             /*DEFINIÇÃO DO MENU INTEIRO*/
             #menu {
-                background-color: rgb(9, 22, 11);
+                background-color: rgb(11, 26, 13);
                 display: none;
                 position: fixed;
                 left: 30%;
@@ -208,13 +211,13 @@
     <!--fim do menu -->
 
     <!-- botao darkmode/lightmode -->
-    <img id='bgbutton' src="img/noc.png"
+    <div id='bgbutton'><img  src="img/noc.png"
         onclick="document.getElementById('bgbutton').style.display='none';document.getElementById('bgbutton1').style.display='block';document.getElementById('bgz').style.color='whitesmoke'"
-        alt="Imagem de um personagem de lol chamado nocturne, que funciona como botao do modo escuro do site">
+        alt="Imagem de um personagem de lol chamado nocturne, que funciona como botao do modo escuro do site"></div>
     <!-- botao lightmode -->
-    <img id='bgbutton1' src="img/lux1.png"
+    <div id="bgbutton1"><img src="img/lux1.png"
         onclick="document.getElementById('bgbutton1').style.display='none';document.getElementById('bgbutton').style.display='block';document.getElementById('bgz').style.color='black';mudarcor()"
-        alt="Imagem de um personagem de lol chamado lux, que funciona como botao do modo claro do site">
+        alt="Imagem de um personagem de lol chamado lux, que funciona como botao do modo claro do site"></div>
        
 
     <!-- fim botao darkmode/lightmode -->
@@ -253,7 +256,7 @@ menuabrir.addEventListener('click', mouseclicar)
     function darkmode() {
         if (bg.style.backgroundColor == 'white') {
             bg.style.backgroundColor = ' rgb(3, 10, 2)';
-            pegarmenu.style.backgroundColor = ' rgb(7, 17, 9)';
+            pegarmenu.style.backgroundColor = '  rgb(11, 26, 13)';
             list[0].style.color = 'white';
             list[1].style.color = 'white';
             list[2].style.color = 'white';
